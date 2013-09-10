@@ -21,6 +21,7 @@ RUN apt-get update
 
 # Install MariaDB
 RUN apt-get -y install mariadb-server
+RUN sed -i 's/^innodb_flush_method/#innodb_flush_method/' /etc/mysql/my.cnf
 
 # Install nginx
 RUN apt-get -y install nginx
