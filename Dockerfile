@@ -32,7 +32,7 @@ RUN apt-get -y install php5-fpm php5-mysql php-apc php5-imagick php5-imap php5-m
 # Configure nginx for PHP websites
 ADD nginx_default.conf /etc/nginx/sites-available/default
 RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php5/fpm/php.ini
-RUN mkdir /var/www
+RUN mkdir -p /var/www && chown -R www-data:www-data /var/www
 
 # Supervisord
 RUN apt-get -y install python-setuptools
