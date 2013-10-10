@@ -27,7 +27,7 @@ RUN sed -i 's/^innodb_flush_method/#innodb_flush_method/' /etc/mysql/my.cnf
 RUN apt-get -y install nginx
 
 # Install PHP5 and modules
-RUN apt-get -y install php5-fpm php5-mysql php-apc php5-imagick php5-imap php5-mcrypt
+RUN apt-get -y install php5-fpm php5-mysql php-apc php5-imap php5-mcrypt php5-curl php5-gd php5-json
 
 # Configure nginx for PHP websites
 ADD nginx_default.conf /etc/nginx/sites-available/default
