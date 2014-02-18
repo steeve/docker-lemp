@@ -39,6 +39,6 @@ RUN apt-get -y install python-setuptools
 RUN easy_install supervisor
 ADD supervisord.conf /etc/supervisord.conf
 
-EXPOSE 8080:80
+EXPOSE 80
 
-CMD supervisord -n -c /etc/supervisord.conf
+CMD ["supervisord", "-n", "-c", "/etc/supervisord.conf"]
